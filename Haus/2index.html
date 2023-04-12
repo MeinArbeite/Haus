@@ -5,14 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .block{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
+        <label for="">Gmail number</label>
+        <input type="text" id="gmailInput" placeholder="@ ********">
+        <button class="gmailCheck">Check!</button>
+        <span class="gmailResult"></span>
+    </div>
+
+
+
+    <div class="password">
         <label for="">Password number</label>
-        <input type="text" id="passwordInput" placeholder="@********">
-        <button class="passwordCheck">Check!</button>
+        <input type="text" id="passwordInput" placeholder="********">
+        <button class="passwordCheck">Check</button>
         <span class="passwordResult"></span>
     </div>
+
+    <div class="block"></div>
 </body>
 <script src="Haus.js"></script>
 </html>
