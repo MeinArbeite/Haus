@@ -6,16 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .block{
-            height: 50px;
-            width: 50px;
-            background-color: red;
+        .block{ 
+            height: 440px; 
+            width: 440px; 
+            position: relative;
+            left: 0; 
+            
+            margin-right: 100px;
+            border: 20px solid transparent; 
+            border-top: 20px solid green; 
+            border-right: 20px solid green;
+           
+            
+         }
+         
+            
+            
+         
+         .box{
             position: absolute;
-            left: 0;
-        }
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            
+          } 
     </style>
 </head>
 <body>
+    <div class="Hauptwrapper">
     <div class="wrapper">
         <label for="">Gmail number</label>
         <input type="text" id="gmailInput" placeholder="@ ********">
@@ -31,8 +49,12 @@
         <button class="passwordCheck">Check</button>
         <span class="passwordResult"></span>
     </div>
-
-    <div class="block"></div>
+    <div class="image-bg">
+        <div class="block">
+            <div class="box"></div>
+        </div>
+    </div>
+    <span class="timer"><span class="minuts">0</span>:<span class="seconds">0</span></p>
 </body>
 <script src="Haus.js"></script>
 </html>

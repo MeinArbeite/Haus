@@ -46,29 +46,86 @@ passwordCheck.addEventListener("click", () => {
   }
 });
 
+// 2 Hausaufgabe
 
-let left = 0;
+// let left = 0;
 const block = document.querySelector(".block");
-let moveLeft = true;
+const box = document.querySelector(".box");
 
-function move() {
-  if(moveLeft) {
-    left = left + 1
-    block.style.left=left+"px"
-    console.log(left);
-  }else {
-    left -=  1
-    block.style.left=left+"px"
-    console.log(left);
+let positonX = 0;
+let positonY = 0;
+
+
+
+
+const handleBoxMove = () => {
+  if (positonX <= 390 && positonY<=0) {
+    positonX += 1;
+    box.style.left = `${positonX}px`;
+    setTimeout(handleBoxMove, 10);
+  }else if (positonY <= 390 && positonX>=390) {
+    positonY += 1;
+    box.style.top = `${positonY}px`;
+    setTimeout(handleBoxMove, 10);
   }
-  if (left === 0) {
-    moveLeft = true
-
-  }else if (left === 600) {
-    moveLeft = false
+  else if (positonX >= 0 && positonY>=0) {
+    positonX -= 1;
+    positonY -= 1;
+    box.style.left = `${positonX}px`;
+    box.style.top = `${positonY}px`
+    setTimeout(handleBoxMove, 10);
   }
-  setTimeout(move, 10)
-}
+};
 
-move()
+handleBoxMove();
+
+// andere
+
+
+// let left = 0;
+
+// const block = document.querySelector(".block");
+// let moveLeft = true;
+// // let moveTop = true;
+
+// function move() {
+//   if(moveLeft) {
+//     left = left + 1
+//     block.style.left=left+"px"
+//     console.log(left);
+//   }else {
+//     left -=  1
+//     block.style.left=left+"px"
+//     console.log(left);
+//   }
+//   if (left === 0) {
+//     moveLeft = true
+
+//   }else if (left === 400) {
+//     moveLeft = false
+//   }
+//   setTimeout(move, 10)
+// }
+
+// move()
+
 // setInterval(move, 500);
+
+const minut = document.querySelector(".minuts")
+const second = document.querySelector(".seconds")
+let second_count = ""
+let minut_count=""
+setInterval(()=>{
+  if(second_count<=59){
+    second_count++
+    second.innerText=second_count
+  }else if(second_count>=59 && minut_count<=3){
+    second_count=''
+    minut_count++
+    minut.innerHTML=minut_count
+  }else{
+    minut_count++
+    minut.innerHTML=minut_count
+    alert("время вышло")
+  }
+},1000)
